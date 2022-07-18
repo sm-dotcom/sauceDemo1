@@ -27,3 +27,28 @@ class Test_001_Login:
             assert True
         else:
             assert False
+
+    def test_loginWithoutUsername(self, setup):
+        self.driver = setup
+        self.lp = Login(self.driver)
+        self.lp.setPassword(self.password)
+        self.lp.clickLogin()
+        act_title = self.driver.title
+        self.driver.close()
+        if act_title == "Swag Labs":
+            assert True
+        else:
+            assert False
+
+
+    def test_loginWithoutPassword(self, setup):
+        self.driver = setup
+        self.lp = Login(self.driver)
+        self.lp.setPassword(self.password)
+        self.lp.clickLogin()
+        act_title = self.driver.title
+        self.driver.close()
+        if act_title == "Swag Labs":
+            assert True
+        else:
+            assert False
