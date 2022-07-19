@@ -90,6 +90,20 @@ class Test_Login:
         else:
             assert False
 
+    def test_logout(self, setup):
+        self.driver = setup
+        self.driver.get(self.baseURL)
+        self.lp = LoginPage(self.driver)
+        self.lp.setUserName(self.username)
+        self.lp.setPassword(self.password)
+        self.lp.clickLogin()
+        self.lp.clickLogout()
+        act_title = self.driver.title
+        if act_title == "Swag Labs":
+            assert True
+        else:
+            assert False
+
 
 
 
