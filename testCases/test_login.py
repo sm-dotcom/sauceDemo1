@@ -85,6 +85,7 @@ class Test_Login:
         self.lp.setPassword(self.password)
         self.lp.clickLogin()
         act_url = self.driver.current_url
+        self.driver.close()
         if act_url == "https://www.saucedemo.com/inventory.html":
             assert True
         else:
@@ -99,6 +100,7 @@ class Test_Login:
         self.lp.clickLogin()
         self.lp.clickLogout()
         act_title = self.driver.title
+        self.driver.close()
         if act_title == "Swag Labs":
             assert True
         else:
