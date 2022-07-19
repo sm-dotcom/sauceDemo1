@@ -24,4 +24,4 @@ Use the following command to start the execution of python test-suite.
 ```bash
 python -m pytest testCases/ -rA -v --tb=line
 ```
-Feel free to contact @SarahMahmood for any queries.
+
